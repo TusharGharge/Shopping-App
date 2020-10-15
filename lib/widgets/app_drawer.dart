@@ -5,8 +5,11 @@ import '../screens/orders_screen.dart';
 import '../screens/user_products_screen.dart';
 import '../providers/auth.dart';
 import '../helpers/custom_route.dart';
+import '../screens/infopage.dart';
 
 class AppDrawer extends StatelessWidget {
+  static const routeName = '/InfoPage';
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -15,6 +18,17 @@ class AppDrawer extends StatelessWidget {
           AppBar(
             title: Text('Hello Friend!'),
             automaticallyImplyLeading: false,
+            actions: <Widget>[
+              IconButton(
+                  icon: Icon(
+                    Icons.info,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(IntroPage.routeName);
+                  })
+            ],
           ),
           Divider(),
           ListTile(
